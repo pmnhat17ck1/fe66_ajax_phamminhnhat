@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>QuanlyNhanVien</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <form>
+                        <div class="card-header bg-dark ">
+                            <h2 class="text-center display-5 text-white">Quản lý nhân viên</h2>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="form-group">
+                                <p>Mã nhân viên</p>
+                                <input class="form-control" id="maNhanVien" />
+                                <p class="text text-danger" id="error_required_maNhanVien"></p>
+                                <p class="text text-danger" id="error_allNumber_maNhanVien"></p>
+                                <p class="text text-danger" id="error_min_max_length_maNhanVien"></p>
+                            </div>
+                            <div class="form-group">
+                                <p>Tên nhân viên</p>
+                                <input class="form-control" id="tenNhanVien" />
+                                <p class="text text-danger" id="error_required_tenNhanVien"></p>
+                                <p class="text text-danger" id="error_allLetter_tenNhanVien"></p>
+                            </div>
+                            <div class="form-group">
+                                <p>Chức vụ</p>
+                                <select id="ChucVu" class="form-control">
+                                    <option value="1">Nhân viên</option>
+                                    <option value="2">Quản Lý</option>
+                                    <option value="3">Giám đốc</option>
+                                </select>
+                                <p class="text text-danger" id="error_required_ChucVu"></p>
+                                <p class="text text-danger" id="error_allLetter_ChucVu"></p>
+                            </div>
+                            <div class="form-group">
+                                <p>Lương căn bản</p>
+                                <input id="luongCB" class="form-control" />
+                                <p class="text text-danger" id="error_required_luongCB"></p>
+                                <p class="text text-danger" id="error_min_max_value_LuongCB"></p>
+                            </div>
+                            <div class="form-group">
+                                <p>Số giờ làm trong tháng</p>
+                                <input id="soGioLamTrongThang" class="form-control" />
+                                <p class="text text-danger" id="error_required_soGioLamTrongThang"></p>
+                                <p class="text text-danger" id="error_min_max_value_soGioLamTrongThang"></p>
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-outline-success" id="btnXacNhan">Thêm nhân viên</button>
+                            <button type="button" class="btn btn-primary" id="btnLuuThongTin" disabled>Lưu thông
+                                tin</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <table class="table" style="margin-bottom:300px;margin-top:30px">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th>Mã nhân viên</th>
+                    <th>Tên nhân viên</th>
+                    <th>Chức vụ</th>
+                    <th>Lương cơ bản</th>
+                    <th>Tổng lương</th>
+                    <th>Giờ làm/tháng</th>
+                    <th>Xếp loại nhân viên</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tblNhanVien">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./models/NhanVien.js"></script>
+    <script src="./models/Validation.js"></script>
+    <script src="./js/indexAjax.js"></script>
+
+</body>
+
+</html>
